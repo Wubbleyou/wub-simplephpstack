@@ -21,14 +21,6 @@ RUN apt update
 #Add xdebug to ini
 RUN pecl install xdebug
 
-#=========
-# Firefox
-#=========
-RUN apt-get update -qqy \
-  && apt-get -qqy --no-install-recommends install \
-    firefox \
-  && rm -rf /var/lib/apt/lists/*
-
 # Add composer plugin for Yii2
 RUN composer global require "fxp/composer-asset-plugin:~1.3.1"
 
