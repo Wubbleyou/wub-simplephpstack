@@ -30,7 +30,7 @@ RUN apt-get update -qqy \
   && rm -rf /var/lib/apt/lists/*
 
 # Add composer plugin for Yii2
-RUN composer global require "fxp/composer-asset-plugin:~1.1.1"
+RUN composer global require "fxp/composer-asset-plugin:~1.3.1"
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
