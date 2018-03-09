@@ -13,8 +13,15 @@ RUN apt-get update && apt-get install -y mysql-client xvfb default-jre
 RUN echo 'deb http://downloads.sourceforge.net/project/ubuntuzilla/mozilla/apt all main' > /etc/apt/sources.list.d/ubuntuzilla.list
 
 RUN apt-key adv --recv-keys --keyserver keyserver.ubuntu.com C1289A29
-
+RUN apt-key adv --keyserver pgp.mit.edu --recv-keys A4A9406876FCBD3C456770C88C718D3B5072E1F5
+ 
 RUN apt update
+ 
+RUN apt-get install -y python-dev python-pip
+RUN python -m pip install -U pip
+RUN pip install --upgrade pip
+RUN pip install awsebcli
+RUN export PATH=$PATH:/opt/aws/eb/linux/python2.7/
 
 #RUN apt-get install firefox
 
