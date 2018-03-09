@@ -28,16 +28,8 @@ RUN export PATH=$PATH:/opt/aws/eb/linux/python2.7/
 #Add xdebug to ini
 RUN pecl install xdebug
 
-#=========
-# Firefox
-#=========
-RUN apt-get update -qqy \
-  && apt-get -qqy --no-install-recommends install \
-    firefox \
-  && rm -rf /var/lib/apt/lists/*
-
 # Add composer plugin for Yii2
-RUN composer global require "fxp/composer-asset-plugin:~1.1.1"
+RUN composer global require "fxp/composer-asset-plugin:~1.3.1"
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
