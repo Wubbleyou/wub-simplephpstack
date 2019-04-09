@@ -6,6 +6,7 @@ RUN echo "deb http://repo.mysql.com/apt/debian/ jessie mysql-apt-config" >> /etc
         echo "deb-src http://repo.mysql.com/apt/debian/ jessie mysql-5.6" >> /etc/apt/sources.list && \
         apt-key adv --keyserver keys.gnupg.net --recv-keys 5072E1F5
 
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 
 #Add mysql + xvfb
 RUN apt-get update && apt-get install -y mysql-client xvfb default-jre
